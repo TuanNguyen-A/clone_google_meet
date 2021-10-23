@@ -1,0 +1,106 @@
+[v-cloak] { display: none; }
+html, body{
+  width: 100%;
+  height: 100%;
+
+}
+
+*, *::after, *::before{
+  box-sizing: border-box;
+}
+
+.header-highlight {
+  color: #ff4954;
+}
+
+.info {
+  padding: 1.5rem;
+}
+
+.container {
+  padding-top: 1rem;
+}
+
+#videos {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  margin-top: 20px;
+}
+
+
+#local{
+  position: fixed;
+  height: 100px;
+  bottom: 80px;
+  right: 10px;
+}
+
+.others{
+  
+}
+
+#videos video {
+  flex: 1 1 50%;
+  padding: 0;
+  min-width: 0;
+}
+
+.option-bar{
+  position: fixed;
+  padding: 15px 0;
+  bottom: 0;
+  width: 100%;
+  background-color: rgb(36, 36, 36);
+  z-index: 1;
+}
+
+#btn-room-info{
+  display: inline-block;
+  position: absolute;
+  left: 10px;
+}
+
+#room-info{
+  visibility: hidden;
+  display: block;
+  position: absolute;
+  width: 650px;
+  left: 3px;
+  top: -90px;
+  background-color: white;
+  cursor: text;
+  user-select: auto;
+  -webkit-user-select: auto;
+  -ms-user-select: auto;
+}
+
+#room-info::after{
+  display: block;
+  position: absolute;
+  bottom: -50px;
+  left: -1px;
+  content: "";
+  background-color: transparent;
+  width: 400px;
+  height: 50px;
+}
+
+#room-info::before{
+  display: block;
+  position: absolute;
+  bottom: -27px;
+  left: 10px;
+  content: "";
+  border: 15px solid ;
+  border-color: white transparent transparent transparent;
+}
+
+#btn-room-info:hover #room-info{
+  visibility: visible;
+}
+
+#btn-leave-room{
+  position: absolute;
+  right: 10px;
+}
