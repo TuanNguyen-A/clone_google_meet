@@ -44,19 +44,24 @@
       </button>
 
       <div v-if="roomId" class="option-bar">
-        <button
-          id="btn-sharescreen"
-          class="button is-rounded"
-          @click="publishVideo(true)"
-        >
-          <i class="fas fa-desktop"></i>
-        </button>
-        <button id="btn-video" class="button is-rounded" @click="changeVideo">
-          <i v-bind:class="videoIcon"></i>
-        </button>
-        <button id="btn-mic" class="button is-rounded" @click="changeMic">
-          <i v-bind:class="micIcon"></i>
-        </button>
+
+        <div id="btn-room-info"  >
+          <div id="room-info" class="panel">
+              <p>
+                Link Room: <span>{{roomUrl}}</span>
+              </p>
+      
+              <strong>Room ID: {{roomId}}</strong>
+          </div>
+          <div class="button is-rounded">
+            <i class="fas fa-info"></i>
+          </div>
+        </div>
+
+        <button id="btn-sharescreen" class="button is-rounded" @click="publishVideo(true)"><i class="fas fa-desktop"></i></button>
+        <button id="btn-video" class="button is-rounded" @click="changeVideo"><i v-bind:class="videoIcon"></i></button>
+        <button id="btn-mic" class="button is-rounded" @click="changeMic"><i v-bind:class="micIcon"></i></button>
+        <button id="btn-leave-room" class="button is-danger is-rounded" @click="leaveRoom"><i class="fas fa-phone-slash"></i></button>
       </div>
     </div>
 

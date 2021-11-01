@@ -209,5 +209,26 @@ const vm = new Vue({
         }
       });
     },
+
+    leaveRoom: function(){
+      this.room.leave(true);
+
+      this.trackList.forEach(function (track) {
+          track.close();
+          track.detachAndRemove();
+      });
+      // subscribedTracks.forEach(function (track) {
+      //     track.detachAndRemove();
+      // });
+
+      this.trackList = [];
+      this.roomToken = '';
+      this.roomId = '';
+      this.roomData = undefined;
+      this.room = undefined;
+
+      $('body').css('background-color','white');
+      $('#videos').html('');
+  }
   },
 });
